@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>회원 가입</title>
+    <style>
+        body {
+            height:300px;
+            width:400px;
+        }
+        #field{
+            border-color:#ff1268;
+            opacity:0.5;
+            color:#ff1268;
+            
+        }
+    </style>
+    <script>
+        function idcheck(elem) {
+            //var elem = document.getElementById("name"); 
+            if (elem.value.length <= 6) {
+                alert("id는 6글자 이상이여야 합니다.")               
+                return false;
+            }
+        }
+        function pwcheck(pw) {
+            if (pw.value.length <= 8) {
+                alert("pw는 8글자 이상이여야 합니다.")
+                return false;
+            }
+        }
+        function telcheck(elem,msg) {
+            var exp = /^\d{9,10}/;
+            if (elem.value.match(exp)) {
+                return true;
+            } else {
+                alert(msg);
+                return false;
+            }
+        }
+        function mailcheck(elem, msg) {
+            var exp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,})+$/;
+            if (elem.value.match(exp)) {
+                return true;
+            } else {
+                alert(msg);
+                return false;
+            }
+        }
+        function inmember() {
+            alert('가입이 완료되었습니다!');
+            window.open('login.html', '_self', 'width=500,height=400,top=300,left=800, resizeable=0', true);
+        }
+    </script>
+</head>
+<body>
+    <form method="post" action="getid.jsp">
+        <fieldset id="field">
+            <legend><b>회원 가입!</b></legend>
+            <b>ID:</b>
+            <input type="text" name="id" onblur="idcheck(this);" /><br />
+            <b>PW:</b>
+            <input type="password" name="password1" id="password1" onblur="pwcheck(this);" /><br />
+            <b>PW확인:</b>
+            <input type="password" name="password2" id="password2" onblur="pwcheck2();" /><br />
+            <b>이름:</b>
+            <input type="text" name="name" /><br />
+            <b>생년월일:</b>
+            <input type="date" name="birth" /><br />
+            <b>휴대폰 번호:</b>
+            <input type="tel" name="tel" id="tel" placeholder="-빼고 입력" onblur="telcheck(document.getElementById('tel'),'잘못된 형식입니다.')" /><br />
+            <b>E-mail:</b>
+            <input type="email" name="email" id="email" onblur="mailcheck(document.getElementById('email'),'잘못된 형식입니다.')" /><br />           
+        </fieldset>
+        <input type="button" value="회원가입" onclick="inmember()" />
+        </form>
+</body>
+</html>

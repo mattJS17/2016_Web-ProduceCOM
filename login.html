@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>login!</title>
+    <style>
+        body {
+            height:300px;
+            width:400px;
+        }
+        #field{
+            border-color:#ff1268;
+            opacity:0.5;
+            color:#ff1268;
+            
+        }
+        #member:link{
+            color:black;
+            opacity:0.5;
+            text-decoration:none;
+        }
+        #member:hover{
+            font-size:1.1em;
+        }
+        
+     </style>
+    <script>
+        function login(name) {
+             
+            alert(name+ "님 환영합니다!");
+            window.close();
+        }
+    </script>
+</head>
+<body>
+    <form method="post" action="process.jsp">
+        <fieldset id="field">
+            <legend><b> Produce C O M Login! </b></legend>
+
+            <label id="id"><b>ID : </b></label>
+            <input type="text" name="myid" id="id" /><br />
+            <label id="password"><b>PW : </b></label>
+            <input type="password" name="password" id="password" />
+            <input type="submit" value="Login!" onclick="login(myid.value);" />
+        </fieldset>
+        <a href="member.html" id="member">아직 회원이 아니신가요?</a>
+    </form>
+</body>
+</html>

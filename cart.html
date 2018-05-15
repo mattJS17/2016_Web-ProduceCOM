@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Cart!</title>
+    <style>
+        body {
+            height: 670px;
+            width: 1000px;
+            background-image:url(images/유정카트.png);
+            background-size:600px 500px;
+            background-repeat:no-repeat;
+            background-position:right bottom;
+            background-color:#f6f4f7;
+              }
+        
+
+        #field {
+            border-color: #ff1268;            
+            color: #ff1268;
+        }
+
+        #member:link {
+            color: black;
+            opacity: 0.5;
+            text-decoration: none;
+        }
+
+        #member:hover {
+            font-size: 1.1em;
+        }
+    </style>
+    <script>
+        function order() {
+            alert('주문 완료되었습니다!');
+            window.close();
+        }
+    </script>
+</head>
+<body>
+    <form method="post" action="process.jsp">
+        <fieldset id="field">
+            <legend><b> Produce C O M Cart !</b></legend>
+            <fieldset id="field">
+                <legend><b> 컴퓨터 </b></legend>
+                프로세서 :
+                <select name="processor">
+                    <option value="none" selected>선택하세요!</option>
+                    <option value="i3">인텔 코어i3-6세대 6100</option>
+                    <option value="i5">인텔 코어i5-6세대 6600</option>
+                    <option value="i7">인텔 코어i7-6세대 6700</option>                   
+                </select>
+                <input type="number" /><br />
+                <br />
+                메모리 카드 :
+                <select name="memory">
+                    <option value="none" selected>선택하세요!</option>
+                    <option value="8G">삼성전자 DDR4 8G PC4-17000</option>
+                    <option value="16G">G.SKILL DDR4 16G PC4-24000 CL15 TRIDENT Z</option>
+                    <option value="64G">CORSAIR DDR4 64G PC4-27700 CL16 Dominator Platinum</option>
+                </select>                
+                <input type="number"/><br />
+                <br />
+                그래픽 카드 :
+                <select name="graphic">
+                    <option value="none" selected>선택하세요!</option>
+                    <option value="950">이엠텍 XENON 지포스 GTX950 OC JETSTREAM WHITE EDITION D5 2GB</option>
+                    <option value="970">이엠텍 XENON 지포스 GTX970 Super JETSTREAM D5 4GB</option>
+                    <option value="980">MSI 지포스 GTX980 Ti OC D5 6GB 트윈 프로져 5 게이밍</option>
+                </select>
+                <input type="number" /><br />
+                <br />
+            </fieldset>
+            <fieldset id="field">
+                <legend><b> 노트북 </b></legend>
+                삼성 :
+                <select name="samsung">
+                    <option value="none" selected>선택하세요!</option>
+                    <option value="s5">노트북 5</option>
+                    <option value="s9">노트북 9</option>
+                    <option value="s9m">노트북 9 metal</option>
+                </select>
+                <input type="number" /><br />
+                <br />
+                LG :
+                <select name="lg">
+                    <option value="none" selected>선택하세요!</option>
+                    <option value="gram14">LG PC 그램 14</option>
+                    <option value="ultra">LG 울트라PC 15U560</option>
+                    <option value="gram15">LG PC 그램 15</option>
+                </select>
+                <input type="number" /><br />
+                <br />
+                Apple :
+                <select name="apple">
+                    <option value="none" selected>선택하세요!</option>
+                    <option value="air">MacBook Air (13-inch, Mid 2016)</option>
+                    <option value="pro">MacBook Pro (13-inch, Mid 2016)</option>
+                    <option value="retina">MacBook Pro Retina (15-inch, Mid 2016)</option>
+                </select>
+                <input type="number" /><br />
+                <br />
+            </fieldset>
+            <fieldset id="field">
+                <legend><b> 추천 </b></legend>
+                추천 제품 :
+                <select name="recommend">
+                    <option value="none" selected>선택하세요!</option>
+                    <option value="s5">초급자용</option>
+                    <option value="s9">중급자용</option>
+                    <option value="s9m">고급자용</option>
+                </select>
+                <input type="number" /><br />
+                <br />               
+            </fieldset>
+            <input type="submit" value="Order!" onclick="order();" />
+            
+        </fieldset>
+    </form>
+</body>
+</html>

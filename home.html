@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            background-color:white;
+        }
+        img {
+            position: absolute;
+            width: 700px;
+            height: 600px;
+            margin-left:300px;
+            
+        }
+     
+        #logo {
+            z-index: 3;
+        }
+
+        #pick {
+            z-index: 2;
+             position: absolute;
+            width: 900px;
+            height: 600px;
+            margin-left:300px;           
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <img id="logo" src="images/home.png" alt="PRODUCE C.O.M" />
+    <img id="pick" src="images/그림1.png" alt="PRODUCE C.O.M" />
+    <script>
+        $("#logo").click(function () {
+            $("#logo").fadeOut("5000");
+            $("body").css("background-color", "black");
+        });
+    </script>
+</body>
+</html>
